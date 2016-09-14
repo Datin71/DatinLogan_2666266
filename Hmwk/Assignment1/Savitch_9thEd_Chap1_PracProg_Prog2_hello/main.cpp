@@ -2,7 +2,7 @@
    File:   main
    Author: Logan Datin
    Created on September 12, 2016, 8:44 PM
-   Purpose: Copy Sample C++ Program and make sure it compiles and runs
+   Purpose: Copy Sample C++ Program and make sure it compiles and runs, then add hello and goodbye to the program
  */
 
 //System Libraries
