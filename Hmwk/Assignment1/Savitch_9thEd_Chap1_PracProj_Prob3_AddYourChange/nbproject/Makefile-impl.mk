@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CPP_template
+PROJECTNAME=Savitch_9thEd_Chap1_PracProj_Prob3_AddYourChange
 
 # Active Configuration
 DEFAULTCONF=Debug
