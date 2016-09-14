@@ -1,8 +1,8 @@
 /* 
    File:   main
-   Author: Logan Datin
-   Created on September 13, 2016, 5:58 PM
-   Purpose: Output "CS!" in large block letters inside a border of *'s followed by two blank lines with a message 
+   Author: Dr. Mark E. Lehr
+   Created on August 29, 2016, 9:41 AM
+   Purpose:  
  */
 
 //System Libraries
@@ -24,20 +24,7 @@ int main(int argc, char** argv) {
     //Process values -> Map inputs to Outputs
     
     //Display Output
-    cout<<"*************************************************"<<endl;
-    cout<<" "<<endl;
-    cout<<"        C C C              S S S S           !!"<<endl;
-    cout<<"      C       C          S         S         !!"<<endl;
-    cout<<"     C                  S                    !!"<<endl;
-    cout<<"    C                    S                   !!"<<endl;
-    cout<<"    C                     S S S S            !!"<<endl;
-    cout<<"    C                             S          !!"<<endl;
-    cout<<"     C                             S         !!"<<endl;
-    cout<<"      C       C         S         S"<<endl;
-    cout<<"        C C C             S S S S            00"<<endl;
-    cout<<" "<<endl;
-    cout<<"*************************************************"<<endl;
-    cout<<"         Computer Science is Cool Stuff!!!"<<endl;
+
     //Exit Program
     return 0;
 }
