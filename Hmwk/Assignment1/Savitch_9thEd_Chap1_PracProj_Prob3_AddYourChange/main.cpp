@@ -1,7 +1,7 @@
 /* 
    File:   main
-   Author: Logan Datin
-   Created on September 13, 2016, 6:27 PM
+   Author: Dr. Mark E. Lehr
+   Created on August 29, 2016, 9:41 AM
    Purpose:  
  */
 
