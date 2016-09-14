@@ -29,12 +29,12 @@ int main(int argc, char** argv) {
     
     //Input or initialize values Here
     cout<<"This problem determines distance dropped in freefall"<<endl;
-    cout<<"Input the time in freefall"<<endl;
+    cout<<"Input the time in freefall in seconds."<<endl;
     cin>>time;
     
     //Process/Calculations Here
-    dsFllm=GRAVITYm*time*time/2;
-    dsFlls=GRAVITYs*time*time/2;
+    dsFllm=GRAVITYm*time*time/2; //calculate distance fell in meters
+    dsFlls=GRAVITYs*time*time/2; //calculate distance fell in feet
     
     //Output Located Here
     cout<<"Gravity Standard = "<<GRAVITYs<<" ft/sec^2"<<endl;
