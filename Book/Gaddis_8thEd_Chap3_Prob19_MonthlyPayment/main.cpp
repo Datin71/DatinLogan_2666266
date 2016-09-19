@@ -35,8 +35,9 @@ int main(int argc, char** argv) {
     //Input or initialize values Here
     
     //Process/Calculations Here
-    float temp=pow(1+intRate/PERCENT/MONTHS,nCmPrds);
-    monPay=intRate*temp*loanAmt/(temp-1);
+    intRate/=(PERCENT*MONTHS);
+    float temp=pow((1+intRate),nCmPrds);
+    monPay=(intRate*temp*loanAmt)/(temp-1);
     totPaid=nCmPrds*monPay;
     intPaid=totPaid-loanAmt;
     
