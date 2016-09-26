@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream>   //Input/Output objects
+#include <iomanip>
 using namespace std;  //Name-space used in the System Library
 
 //User Libraries
@@ -21,10 +22,9 @@ int main(int argc, char** argv) {
     float intR;  //Interest rate per year in percentage
     float amt;  //Amount of money the consumer needs
     float dur;  //Duration of the loan in months
-    float ifV;  //Initial Face value of the loan
-    float mP;   //Monthly Payment
-    float yone,ytwo,ythree,yfour,yfive,ysix;   //yield 1, 2, 3, 4, 5, 6
-    float fV, ffV;    //Face Value
+    float fVal;  //Face value of the loan
+    float monPay;   //Monthly Payment
+    float yield;  //yield - The money the bank is making from the interest rate
   
     //Input values
     cout<<"Hello, we are going to figure out how big your loan will be after interest. "<<endl;
@@ -36,34 +36,13 @@ int main(int argc, char** argv) {
     cin>>dur;
    
     //Process values -> Map inputs to Outputs
-    yone=amt*(intR*.01)*(dur/12);
-    ifV=yone+amt;
-    ytwo=ifV*(dur/12)*(intR*.01);
-    if (ytwo+amt!=ifV)
-    {
-    ythree=ifV*(intR*.01)*(dur/12);
-    fV=ythree+amt;
-    yfour=fV*(dur/12)*(intR*.01);  
-    }
-    else (cout<<"weee");
-    
-    if (yfour+amt!=fV)
-    {
-    yfive=fV*(intR*.01)*(dur/12);
-    ffV=yfive+amt;
-    ysix=ffV*(dur/12)*(intR*.01);  
-    }
-    else (cout<<"weee");
+    fVal=amt/(1-(dur/12)*(intR*.01));
+    yield=fVal-amt;
+    monPay=fVal/dur;
     //Display Output
-    cout<<"yeild1: "<<yone<<endl;
-    cout<<"Yield2: "<<ytwo<<endl;
-    cout<<"yeild3: "<<ythree<<endl;
-    cout<<"Yield4: "<<yfour<<endl;
-    cout<<"yeild5: "<<yfive<<endl;
-    cout<<"Yield6: "<<ysix<<endl;
-    cout<<"initial FaceValue: "<<ifV<<endl;
-    cout<<"FaceValue: "<<fV<<endl;
-    cout<<"Final face Value: "<<ffV<<endl;
+    cout<<"Monthly Payment: $"<<fixed<<setprecision(2)<<monPay<<endl;
+    cout<<"Total Interest Paid: $"<<fixed<<setprecision(2)<<yield<<endl;
+    cout<<"FaceValue of the loan: $"<<fixed<<setprecision(2)<<fVal<<endl;
     //Exit Program
     return 0;
 }
