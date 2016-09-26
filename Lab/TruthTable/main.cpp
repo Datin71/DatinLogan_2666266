@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
- * Created on July 19, 2016, 9:07 AM
- * Purpose:  Hello World Template
+ * Author: Logan Datin
+ * Created on September 26, 2016, 9:34 AM
+ * Purpose:  Display 13 columns of the truth table
  */
 
 //System Libraries Here
@@ -19,13 +19,90 @@ using namespace std;
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare all Variables Here
+    bool x,y;
     
-    //Input or initialize values Here
+    //Output the Heading of the truth table
+    cout<<"X Y !X !Y X&&Y X||Y X^Y X^Y^Y X^Y^X !(X&&Y) !X||!Y !(X||Y) !X&&!Y\n";
+    //Input values for first row
+    x=true;
+    y=true;
     
-    //Process/Calculations Here
+    //Display the first row of the truth table
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y?'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"   ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x||y?'T':'F')<<"   ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<((x^y)^y?'T':'F')<<"     ";
+    cout<<((x^y)^x?'T':'F')<<"       ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<(!x&&!y?'T':'F')<<" ";
+    cout<<endl;
     
-    //Output Located Here
-    cout<<"Hello World"<<endl;
+    //Input value for 2nd row
+    y=false;
+    
+    //Display 2nd row
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y?'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"   ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x||y?'T':'F')<<"   ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<((x^y)^y?'T':'F')<<"     ";
+    cout<<((x^y)^x?'T':'F')<<"       ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<(!x&&!y?'T':'F')<<" ";
+    cout<<endl;
+    
+    //Input values for 3rd row
+    x=false;
+    y=true;
+    
+    //Display the 3rd row of the truth table
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y?'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"   ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x||y?'T':'F')<<"   ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<((x^y)^y?'T':'F')<<"     ";
+    cout<<((x^y)^x?'T':'F')<<"       ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<(!x&&!y?'T':'F')<<" ";
+    cout<<endl;
+    
+    //Input value for 4th row
+    y=false;
+    
+    //Display 4th row
+    cout<<(x?'T':'F')<<" ";
+    cout<<(y?'T':'F')<<"  ";
+    cout<<(!x?'T':'F')<<"  ";
+    cout<<(!y?'T':'F')<<"   ";
+    cout<<(x&&y?'T':'F')<<"    ";
+    cout<<(x||y?'T':'F')<<"   ";
+    cout<<(x^y?'T':'F')<<"    ";
+    cout<<((x^y)^y?'T':'F')<<"     ";
+    cout<<((x^y)^x?'T':'F')<<"       ";
+    cout<<(!(x&&y)?'T':'F')<<"      ";
+    cout<<(!x||!y?'T':'F')<<"      ";
+    cout<<(!(x||y)?'T':'F')<<"      ";
+    cout<<(!x&&!y?'T':'F')<<" ";
+    cout<<endl;
+         
+    
+    
 
     //Exit
     return 0;
