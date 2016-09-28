@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
     float socialT, fedT, stateT; //Total amount deducted from social, federal, and state tax
     unsigned short depend; //amount of dependents
     int dpndD; //Amount deducted for dependents
+    
     //Input values
     cout<<"How much money do you make an hour?"<<endl;
     cin>>payRate;
@@ -35,12 +36,12 @@ int main(int argc, char** argv) {
     cin>>depend;
     
     //Process values -> Map inputs to Outputs
-    dpndD=(depend>=3)?35:0;
-    if (hrsWork<=40)
+    dpndD=(depend>=3)?35:0;  //If the amount of dependents is 3 or more, the amount deducted is 35 dollars, if not, it is 0
+    if (hrsWork<=40)        //If 40 or less hours are worked, calculate gross pay
     {
     gross=payRate*hrsWork;
     }
-    if (hrsWork>40)
+    if (hrsWork>40)         //Calculate gross pay if the person worked overtime
     {
     overtime=hrsWork-40;
     gross=payRate*40+payRate*1.5*overtime;
@@ -48,12 +49,9 @@ int main(int argc, char** argv) {
     socialT=gross*socialP; //Calculate Social Security witheld total
     fedT=gross*fedP;         //Calculate Federal witheld total
     stateT=gross*stateP;         //Calculate state withheld total
-    if (depend>=3) 
-    ttlHold=socialT+fedT+stateT+unFees+35;  //If dependents are 3 or more, deduct 35 dollars
-        else 
-        ttlHold=socialT+fedT+stateT+unFees;
+    ttlHold=socialT+fedT+stateT+unFees+dpndD; //Calculate total fees deducted
     
-    net=gross-ttlHold;
+    net=gross-ttlHold; //calculate net pay
     
     
         
