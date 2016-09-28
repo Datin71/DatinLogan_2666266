@@ -2,11 +2,12 @@
    File:   main
    Author: Logan Datin
    Created on September 27, 2016, 9:51 PM
-   Purpose:  Calculate the users base metabolic rate
+   Purpose:  Calculate the users base metabolic rate and see how many chocolate bars they can eat
  */
 
 //System Libraries
 #include <iostream>   //Input/Output objects
+#include <iomanip>
 using namespace std;  //Name-space used in the System Library
 
 //User Libraries
@@ -21,6 +22,8 @@ int main(int argc, char** argv) {
     int weight, height, age; //user inputs their weight in lbs, height in inches, and age in years
     char sex;  //users sex
     float bmr; //base metabolic rate, or the amount calories needed to maintain weight
+    int bar=230; //Chocolate bar
+    int barDly; //The amount of chocolate bars you can eat daily
     //Input values
     cout<<"Enter weight in pounds"<<endl;
     cin>>weight;
@@ -43,8 +46,11 @@ int main(int argc, char** argv) {
     
     if (bmr<100)
         cout<<"Error:You entered a value or character incorrectly"<<endl;
+    barDly=bmr/bar;
+    
     //Display Output
-    cout<<bmr<<endl;
+    cout<<"Your base metabolic rate (BMR) is "<<fixed<<setprecision(0)<<bmr<<" calories"<<endl;
+    cout<<"This means you can eat about "<<barDly<<" chocolate bars(that average 230 calories) everyday, though it is not encouraged by your doctor."<<endl;
     //Exit Program
     return 0;
 }

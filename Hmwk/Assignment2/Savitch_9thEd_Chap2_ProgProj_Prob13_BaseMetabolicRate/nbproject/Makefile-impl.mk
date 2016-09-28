@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Savitch_9thEd_ProgProj_Prob13_BaseMetabolicRate
+PROJECTNAME=Savitch_9thEd_Chap2_ProgProj_Prob13_BaseMetabolicRate
 
 # Active Configuration
 DEFAULTCONF=Debug
