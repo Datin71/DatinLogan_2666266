@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     cin>>depth;
     
     //Process values -> Map inputs to Outputs
-    radius=inchRad/12;
+    radius=inchRad/12; //Convert the radius in inches to radius in feet
     volFt=PI*(radius)*(radius)*(depth); //calculate volume in feet cubed
     volGal=volFt*7.48; //Convert feet cubed to gallons
     
