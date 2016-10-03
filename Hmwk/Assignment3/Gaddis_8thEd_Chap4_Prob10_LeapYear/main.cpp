@@ -49,12 +49,10 @@ int main(int argc, char** argv) {
             }
             break;
         }
-        case 2: 
-        leap=(year%4!=0)?"There are 28 days in February, ":
-             (year%400==0)?"There are 29 days in February, ":
-             (year%100==0)?"There are 28 days in February, ":"There are 29 days in February, ";
-        cout<<leap<<year<<endl;
-                
+        case 2: cout<<"There are "<<
+                    ((((year%4==0)&&(year%100!=0))||(year%400==0))?"29":"28")<<
+                    " days in february, "<<year<<endl;
+            break;
         
         case 3: cout<<"There are 31 days in March, "<<year<<endl;break;
         case 4: cout<<"There are 30 days in April, "<<year<<endl;break;
