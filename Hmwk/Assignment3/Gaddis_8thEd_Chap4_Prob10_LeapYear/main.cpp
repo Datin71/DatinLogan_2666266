@@ -49,9 +49,7 @@ int main(int argc, char** argv) {
             }
             break;
         }
-        case 2: cout<<"There are "<<
-                    ((((year%4==0)&&(year%100!=0))||(year%400==0))?"29":"28")<<
-                    " days in february, "<<year<<endl;
+        case 2: cout<<"There are "<<((((year%4==0)&&(year%100!=0))||(year%400==0))?"29":"28")<<" days in february, "<<year<<endl;
             break;
         
         case 3: cout<<"There are 31 days in March, "<<year<<endl;break;
