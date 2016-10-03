@@ -20,6 +20,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare all Variables Here
     unsigned short year, month;
+    bool leap;
     //Input or initialize values Here
     cout<<"Type in year and month to return the number of days in a month"<<endl;
     cout<<"Month 1 to 12 and year 1500 to 3000"<<endl;
@@ -36,7 +37,7 @@ int main(int argc, char** argv) {
     //Process/Calculations Here
     switch(month){
         case 1: cout<<"There are 31 days in January, "<<year<<endl;break;
-        case 2: {
+        case 13: {                      //sample code - made case 13 because 13 will never be used
             if(year%4!=0){
                 cout<<"There are 28 days in February, "<<year<<endl;
             }else if(year%400==0){
@@ -48,6 +49,13 @@ int main(int argc, char** argv) {
             }
             break;
         }
+        case 2: 
+        leap=(year%4!=0)?"There are 28 days in February, ":
+             (year%400==0)?"There are 29 days in February, ":
+             (year%100==0)?"There are 28 days in February, ":"There are 29 days in February, ";
+        cout<<leap<<year<<endl;
+                
+        
         case 3: cout<<"There are 31 days in March, "<<year<<endl;break;
         case 4: cout<<"There are 30 days in April, "<<year<<endl;break;
         case 5: cout<<"There are 31 days in May, "<<year<<endl;break;
@@ -60,6 +68,7 @@ int main(int argc, char** argv) {
         case 12: cout<<"There are 31 days in December, "<<year<<endl;break;
     }
     
+    //Separate case using logical operators
    
 
     //Exit
