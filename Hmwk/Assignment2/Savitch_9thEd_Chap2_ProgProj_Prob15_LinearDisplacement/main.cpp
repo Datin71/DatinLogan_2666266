@@ -21,7 +21,6 @@ int main(int argc, char** argv) {
     float coeff; //coefficient of linear expansion
     float temp;  //Change in temp in degrees celsius
     float iLength; //Initial length
-    float fLength; //Final Length
     float cLength; //Change in length
     
     //Input values
@@ -37,7 +36,9 @@ int main(int argc, char** argv) {
     if(cLength<0)
         cout<<"The material will contract by "<<-cLength<<" meters."<<endl;
     if(cLength>0)
-        cout<<"The material will expand by "<<cLength<<"meters"<<endl;
+        cout<<"The material will expand by "<<cLength<<" meters"<<endl;
+    if(cLength==0)
+        cout<<"The material will not expand nor conract because the temperature did not change"<<endl;
 
     //Exit Program
     return 0;
