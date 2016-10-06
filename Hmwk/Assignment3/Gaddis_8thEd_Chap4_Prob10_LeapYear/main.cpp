@@ -19,8 +19,8 @@ using namespace std;
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare all Variables Here
-    unsigned short year, month;
-    bool leap;
+    unsigned short year, month;  //Year from 1500 to 3000, month from 1-12
+    
     //Input or initialize values Here
     cout<<"Type in year and month to return the number of days in a month"<<endl;
     cout<<"Month 1 to 12 and year 1500 to 3000"<<endl;
@@ -28,9 +28,9 @@ int main(int argc, char** argv) {
     
     //input validation
     if(year<=1500||year>=3000){
-        cout<<"Bad Year "<<endl;
+        cout<<"Bad Year "<<endl;  //determines if year input is valid
     }
-    if(month<1||month>12){
+    if(month<1||month>12){    //Determines if month input is valid
         cout<<"Bad Month "<<endl;
     }
     
