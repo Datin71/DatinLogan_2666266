@@ -2,7 +2,7 @@
    File:   main
    Author: Logan Datin
    Created on October 05, 2016, 4:37 PM
-   Purpose:  
+   Purpose:  Calculate weight based on mass
  */
 
 //System Libraries
@@ -24,11 +24,11 @@ int main(int argc, char** argv) {
     cout<<"Enter the object's mass in kilograms"<<endl;
     cin>>mass;
     //Process values -> Map inputs to Outputs -> Display Output
-    weight=mass/9.8;  //Calculate the weight
+    weight=mass*9.8;  //Calculate the weight
     (weight>1000)?cout<<"Too heavy": //determine if object is too heavy, light, or display the weight
     (weight<10)?cout<<"Too light":
     cout<<"Object's weight is "<<weight<<" Newtons";
-
+    
     //Exit Program
     return 0;
 }

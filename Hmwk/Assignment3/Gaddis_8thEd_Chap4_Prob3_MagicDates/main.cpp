@@ -2,7 +2,7 @@
    File:   main
    Author: Logan Datin
    Created on October 05, 2016, 3:48 PM
-   Purpose:  Determine is a date is "Magic"
+   Purpose:  Determine if a date is "Magic"
  */
 
 //System Libraries
