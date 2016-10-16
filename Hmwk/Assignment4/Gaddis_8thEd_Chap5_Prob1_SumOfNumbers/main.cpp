@@ -21,7 +21,6 @@ int main(int argc, char** argv) {
     //Declare all Variables Here
     int minNum=1; //Starting number
     int maxNum; //User defined positive integer value
-    int counter=0;//Counter for the loop
     int sum; //The sum of all the integers up to the number that was input
     //Prompt user for integer
     cout<<"Enter a positive integer"<<endl;
@@ -34,18 +33,14 @@ int main(int argc, char** argv) {
     }
    
     //Process/Calculations Here
-    for (int i=1;i<=maxNum;i++){  //i is equal to 1, is i less that max number? if so, do the process, then add 1. Find out if true. repeat until true
-        sum=minNum+counter;
-        cout<<sum<<endl;
-        minNum++;
-        counter++;
+    for (int i=minNum;i<=maxNum;i++){  //i is equal to 1, is i less/equal to that max number? if so, do the process, then add 1. Find out if true. repeat until true
+        sum=sum+i; //The sum is equal to itself plus i
         
     }
     
     //Output Located Here
-    cout<<"Number: "<<maxNum<<endl;
-    cout<<"counter: "<<counter<<endl;
-    cout<<"sum: "<<sum<<endl;
+    cout<<"You entered : "<<maxNum<<endl;
+    cout<<"The sum of all of the integers up to your number is: "<<sum<<endl;
     
 
     //Exit
