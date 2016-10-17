@@ -20,23 +20,19 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare all Variables Here
     int incRate=4;    //The rate in percentage that the country club will increase its price annually
-    int charge=2500; //The initial price in dollars of the membership
+    int cost=2500; //The price in dollars of the membership
     int year=1;       //Initial year equals 0
-    int cost;         //The updated cost of the membership
     int incAmt;       //The amount that is being added to the fee
     
     //Input or initialize values Here
     
-    //Process/Calculations Here
+    //Process/Calculations/Display Here
     for(int i=year;i<7;i++){
-        incAmt=(charge*incRate)/100;
-        cost=incAmt+charge
+        incAmt=(cost*incRate)/100;
+        cost=incAmt+cost;
         cout<<"New cost of Annual Membership for year "<<year<<" : $"<<cost<<endl;
         year++;
     }
-    //Output Located Here
-  
-
     //Exit
     return 0;
 }
