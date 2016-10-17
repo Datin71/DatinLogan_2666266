@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     //Input or initialize values Here
     
     //Process/Calculations/Display Here
-    for(int i=year;i<7;i++){
+    for(int i=year;i<7;i++){   //calculate the membership fees for different years 
         incAmt=(cost*incRate)/100;
         cost=incAmt+cost;
         cout<<"New cost of Annual Membership for year "<<year<<" : $"<<cost<<endl;
