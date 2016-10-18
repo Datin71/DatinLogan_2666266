@@ -42,8 +42,8 @@ int main(int argc, char** argv) {
         if(i==13)continue; //skip floor 13
         cout<<"Enter number of rooms for floor "<<i<<endl;
         cin>>room;
-        while (room<1){     //Validate room input
-            cout<<"Error: Wrong number of rooms entered."<<endl;
+        while (room<10){     //Validate room input
+            cout<<"Error: Wrong number of rooms entered. Each floor must have at least 10 rooms"<<endl;
             cin>>room;
         }
         //Calculate total room tally
