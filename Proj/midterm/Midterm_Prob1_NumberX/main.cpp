@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
             }
             
         }
-        for(int i=1;one<num;i++){
+        for(int i=1;one<num;i++){  //loop for the middle down
             one++;
             if (one<10){
             cout<<setw(one+20-2*i)<<one<<setw(i*2-1)<<one<<endl;
@@ -78,10 +78,6 @@ int main(int argc, char** argv) {
             }
         }
     }
-    
-    
-    //Display Output
-    
 
     //Exit Program
     return 0;
