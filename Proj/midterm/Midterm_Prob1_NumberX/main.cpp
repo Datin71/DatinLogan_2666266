@@ -21,10 +21,12 @@ int main(int argc, char** argv) {
     //Declaration of Variables
     int num; //The number the user inputs
     float space; //The space in between the characters
+    int one=1; //variable used to process an even number. equal to 1
     
     //Prompt for input
     cout<<"Please input an integer from 1-50"<<endl;
     cin>>num;
+    
     
     //Validate input
     while(num<1||num>50){
@@ -54,13 +56,32 @@ int main(int argc, char** argv) {
         }
     
     //process for even number
-    if(num%2==0) {
-        cout<<"even!"<<endl;
+    else if(num%2==0) {
+        cout<<setw(20)<<one<<setw(num-1)<<one<<endl;
+        for(int i=2;one<num/2;i++){  //loop for the 2nd line up to the middle number
+            one++;
+            if (one<10){
+            cout<<setw(i+19)<<one<<setw(num-i*2+1)<<one<<endl;
+            }
+            if (one>=10) {
+            cout<<setw(i+19)<<one<<setw(num-i*2+2)<<one<<endl;    
+            }
+            
+        }
+        for(int i=1;one<num;i++){
+            one++;
+            if (one<10){
+            cout<<setw(one+20-2*i)<<one<<setw(i*2-1)<<one<<endl;
+            }
+            if (one>=10) {
+                cout<<setw(one+20-2*i)<<one<<setw(i*2)<<one<<endl;
+            }
+        }
     }
     
     
     //Display Output
-    cout<<num<<endl;
+    
 
     //Exit Program
     return 0;
