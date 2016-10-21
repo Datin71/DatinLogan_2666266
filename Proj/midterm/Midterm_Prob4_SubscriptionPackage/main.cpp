@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
         cin>>choice;
     }
     
-    //Prompt for user inputs
+    //Prompt for user input
     cout<<"How many hours will you watch a month?"<<endl;
     cin>>watch;
     
@@ -93,13 +93,56 @@ int main(int argc, char** argv) {
     cout<<"Package B cost/month: $";
             float totalB=calcB(watch); //set price for package B
     cout<<"Package C cost/month: $34.95"<<endl;
+    
+    //Determine best Package for user
+    if (choice==1){
+        if (totalA<totalB&&totalA<34.95){
+            cout<<"You have chosen the cheapest package"<<endl;
+    }
+        if (totalA>totalB&&totalB<34.95){
+            cout<<"Package B is the cheapest option. You will save $"<<totalA-totalB<<endl;
+        }
+        if (totalA>34.95&&totalB>34.95){
+            cout<<"Package C is the cheapest option. You will save $"<<totalA-34.95<<endl;
+        }
+    }
+    
+    
+    if (choice==2){
+        if (totalB<totalA&&totalB<34.95){
+            cout<<"You have chosen the cheapest package"<<endl;
+        }   
+        if (totalB>34.95&&totalA>34.95){
+            cout<<"Package C is the cheapest option. You will save $"<<totalB-34.95<<endl;
+        }
+        if (totalA<totalB){
+            cout<<"Package A is the cheapest option. You will save $"<<totalB-totalA<<endl;
+        }
+                
+    }
+    
+    if (choice==3){
+        if (34.95<totalA&&totalB>34.95){
+            cout<<"You have chosen the cheapest package"<<endl;
+        }   
+        if (totalB<34.95&&totalB<totalA){
+            cout<<"Package B is the cheapest option. You will save $"<<34.95-totalB<<endl;
+        }
+        if (totalA<totalB){
+            cout<<"Package A is the cheapest option. You will save $"<<34.95-totalA<<endl;
+        }
+                
+    }
+    
+    
+
     //Exit Program
     return 0;
 }
 
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
-//*************************   Problem 1 ****************************************
+//**********************   Package A Calculation *******************************
 //Purpose:  Calculate the price for Package A
 //Inputs:   input how many hours were watched
 //Output:   output cost per month
@@ -125,7 +168,7 @@ float calcA(float num){
 
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
-//*************************   Problem 1 ****************************************
+//********************* Package B Calculation **********************************
 //Purpose:  Calculate the price for Package B
 //Inputs:   input how many hours were watched
 //Output:   output cost per month
@@ -141,7 +184,7 @@ float calcB(float num){
     
     //process monthly rate
     totalB=(num<=15)?rateB: //rate at 15 hours or less
-           (num>15&&num<=40)?rateB+(num-5)*penRB1: //rate at 15-40 hours
+           (num>15&&num<=40)?rateB+(num-15)*penRB1: //rate at 15-40 hours
            rateB+(num-15)*penRB1+(num-40)*penRB2;//rate at over 40 hours
             cout<<fixed<<setprecision(2)<<totalB<<endl; //output number
    
