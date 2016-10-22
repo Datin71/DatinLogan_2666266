@@ -21,11 +21,9 @@ void problem3();
 void problem4();
 void problem5();
 void problem6();
-//Function prototype for problem 3
-void write(int); //function that writes out a number(for prob3)
-//Function prototypes for problem 4
-float calcA(float);
-float calcB(float);
+void write(int);    //Function prototype for problem 3
+float calcA(float); //Function prototypes for problem 4
+float calcB(float); //Function prototypes for problem 4
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
@@ -39,7 +37,7 @@ int main(int argc, char** argv) {
         cout<<"2.  Type 2  for Problem 2(4CharNumber)"<<endl;
         cout<<"3.  Type 3  for Problem 3(WriteACheck)"<<endl;
         cout<<"4.  Type 4  for Problem 4(SubscriptionPackage)"<<endl;
-        cout<<"5.  Type 5  for Problem E"<<endl;
+        cout<<"5.  Type 5  for Problem 5(GrossPay)"<<endl;
         cout<<"6.  Type 6  for Problem F"<<endl;
         cout<<"7.  Type 7  for Problem G"<<endl;
         cout<<"8.  Type 8  for Problem H"<<endl;
@@ -354,12 +352,38 @@ void problem4(){
     }
     //Exit Program
 }
-
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//*************************   Problem 5 ****************************************
+//Purpose:  Calculate an employees gross pay
+//Inputs:   hours worked and pay rate
+//Output:   Outputs employees gross pay
+//******************************************************************************
 void problem5(){
-    cout<<"Inside Problem E"<<endl;
-    //Input values
-    //Process values -> Map inputs to Outputs 
+    //Declaration of Variables
+    float gross; //total pay
+    float rate;  //rate per hour
+    int hours;   //hours worked
+    
+    //Prompt user for inputs
+    cout<<"Enter your pay rate per hour($$$.$$)"<<endl;
+    cin>>rate;
+    cout<<"Enter the amount of hours worked"<<endl;
+    cin>>hours;
+    
+    //Calculate gross pay
+    gross=(hours<=40)?rate*hours: //pay for hours worked at or under 40
+          (hours>40&&hours<=50)?(rate*40)+(hours-40)*2*rate: //pay for hours worked over 40 but under/at 50
+          (hours>50)?(rate*40)+(2*rate*10)+(hours-50)*3*rate:-1; //pay for hours worked over 50, else it is -1
+   if(hours<=-1||rate<=-1){
+        cout<<"Error. You need to stop working. You are not doing it right."<<endl;
+    }
+    
     //Display Output
+    if (gross>=0&&hours>=0&&rate>=0){
+    cout<<"You will make $"<<gross<<" for the "<<hours<<" hours worked"<<endl;
+    }
+//Exit Program
 }
 
 void problem6(){
@@ -440,7 +464,6 @@ float calcA(float num){
     return totalA; 
    
 }
-
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
 //********************* Package B Calculation prob4 function  ******************
@@ -448,7 +471,6 @@ float calcA(float num){
 //Inputs:   input how many hours were watched
 //Output:   output cost per month
 //******************************************************************************
-
 float calcB(float num){
     //Declare Variables
     float rateB=23.75; //Rate/month
