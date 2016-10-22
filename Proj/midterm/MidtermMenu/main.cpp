@@ -8,6 +8,7 @@
 //System Libraries
 #include <iostream>   //Input/Output objects
 #include <iomanip>      //Formatting control
+#include <cmath>        //for problem 6 power function
 using namespace std;  //Name-space used in the System Library
 
 //User Libraries
@@ -24,6 +25,7 @@ void problem6();
 void write(int);    //Function prototype for problem 3
 float calcA(float); //Function prototypes for problem 4
 float calcB(float); //Function prototypes for problem 4
+int factorial(int x); //Function prototype for problem 6
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
@@ -38,11 +40,7 @@ int main(int argc, char** argv) {
         cout<<"3.  Type 3  for Problem 3(WriteACheck)"<<endl;
         cout<<"4.  Type 4  for Problem 4(SubscriptionPackage)"<<endl;
         cout<<"5.  Type 5  for Problem 5(GrossPay)"<<endl;
-        cout<<"6.  Type 6  for Problem F"<<endl;
-        cout<<"7.  Type 7  for Problem G"<<endl;
-        cout<<"8.  Type 8  for Problem H"<<endl;
-        cout<<"9.  Type 9  for Problem I"<<endl;
-        cout<<"10. Type 10 for Problem J"<<endl;
+        cout<<"6.  Type 6  for Problem 6(Sequence)"<<endl;
         cin>>menuItm;
 
         //Go to the Problem
@@ -68,6 +66,7 @@ int main(int argc, char** argv) {
 //Output:   Outputs an array that looks like an X
 //******************************************************************************
 void problem1(){
+    cout<<"Inside Problem 1(NumberX)"<<endl;
     //Declaration of Variables
     int num; //The number the user inputs
     float space; //The space in between the characters
@@ -138,6 +137,7 @@ void problem1(){
 //Output:   Outputs a number with asterisks that correlate to the number
 //******************************************************************************
 void problem2(){
+    cout<<"Inside Problem 2(4CharNumber)"<<endl;
     //Declaration of Variables
     int num; //number the user inputs
     int num3; //number of thousands
@@ -195,6 +195,7 @@ void problem2(){
 //Output:   Outputs check info in position
 //******************************************************************************
 void problem3(){
+    cout<<"Inside Problem 3(WriteACheck)"<<endl;
     //Declaration of Variables
     string date;     //the date of the check
     string payee;    //the person receiving the check
@@ -245,6 +246,7 @@ void problem3(){
 //Output:   Outputs the best choice for them and how much they would save
 //******************************************************************************
 void problem4(){
+    cout<<"Inside Problem 4(Subscription)"<<endl;
     //Declaration of Variables
     int choice; //The package that the user selects
     int watch;  //Hours/month that the user will watch
@@ -360,6 +362,7 @@ void problem4(){
 //Output:   Outputs employees gross pay
 //******************************************************************************
 void problem5(){
+    cout<<"Inside Problem 5(GrossPay)"<<endl;
     //Declaration of Variables
     float gross; //total pay
     float rate;  //rate per hour
@@ -385,12 +388,44 @@ void problem5(){
     }
 //Exit Program
 }
-
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//*************************   Problem 6 ****************************************
+//Purpose:  Calculate the sum of a sequence
+//Inputs:   a number and number of terms in the sequence
+//Output: The sum the of sequence sum = 1 - x^2/2! + x^4/4! -x^6/6! + ..........
+//******************************************************************************
 void problem6(){
-    cout<<"Inside Problem F"<<endl;
-    //Input values
-    //Process values -> Map inputs to Outputs 
-    //Display Output
+    cout<<"Inside Problem 6(Sequence)"<<endl;
+    //Declaration of Variables
+    int x;          //input number for equation
+    int n;          //the number of terms
+    float sum1=0;   //first result of the sequence
+    float sum;      //final result
+    int y=0;        //alternate sign working variable
+    int z=0;        //Exponent number on sequence and factorial
+    
+    //Prompt for inputs
+    cout<<"This program will output the sum of 1 - (x^2)/2! + (x^4)/4! -(x^6)/6! + .........."<<endl;
+    cout<<"where x is the number you input and n is the number of terms"<<endl;
+    cout<<"input a number(x)"<<endl;
+    cin>>x;
+    cout<<"Input the number of terms"<<endl;
+    cin>>n;            
+    
+    //Process sequence
+    for(int i=0;i<n;i++){                           //repeat n number of times
+        z+=2;                                       //add 2 to z
+        y=(i%2==0)?-1:1;                            //Make sign alternate by changing y from +1 to -1
+        sum1=y*((pow(x,(z)))/factorial(z))+sum1;    //sum is equal to previous sum + the new sequence
+        
+    }
+    sum=sum1+1; //add one to sum1
+    
+    //Display output
+    cout<<"The total sum of the sequence is "<<sum<<endl;
+
+    //Exit Program
 }
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -487,4 +522,14 @@ float calcB(float num){
    
     return totalB; 
    
+}
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//*************************   factorial prob6 function  ************************
+//Purpose:  take a number and return factorial
+//Inputs:   integer from program
+//Output:   factorial of integer that was input
+//******************************************************************************
+int factorial(int f){
+  return (f==1||f==0)?1:factorial(f-1)*f;
 }

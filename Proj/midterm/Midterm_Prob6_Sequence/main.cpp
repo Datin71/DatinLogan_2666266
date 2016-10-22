@@ -1,8 +1,8 @@
 /* 
    File:   main
    Author: Logan Datin
-   Created on October 05, 2016, 4:37 PM
-   Purpose:  
+   Created on October 21, 2016, 9:38 PM
+   Purpose:  Calculate the sum of a sequence
  */
 
 //System Libraries
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
     sum=sum1+1; //add one to sum1
     
     //Display output
-    cout<<"The total sum of the sequence is"<<sum<<endl;
+    cout<<"The total sum of the sequence is "<<sum<<endl;
 
     //Exit Program
     return 0;
