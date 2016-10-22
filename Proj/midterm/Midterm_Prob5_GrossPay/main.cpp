@@ -39,7 +39,6 @@ int main(int argc, char** argv) {
     //Display Output
     if (gross>=0&&hours>=0&&rate>=0){
     cout<<"You will make $"<<gross<<" for the "<<hours<<" hours worked"<<endl;
-    cout<<gross<<endl;
     }
 
     //Exit Program
