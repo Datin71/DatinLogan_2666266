@@ -20,10 +20,6 @@ float calcB(float);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declaration of Variables
-    float rateA=16.75, RateB=23.75, RateC=34.95; //The $/month of package a, b, & c
-    int hourA=5, hourB=15, hourC=744;   //hours to be viewed/month @ normal rate
-    int penTA=20, penTb=25;   //time to be penalized for @ high rate for a&b
-    float penRA1=0.85, penRA2=1, penRB1=0.65, penRB2=0.75; //Different penalty rates for a&b
     int choice; //The package that the user selects
     int watch;  //Hours/month that the user will watch
     
