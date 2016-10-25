@@ -43,8 +43,8 @@ int main(int argc, char** argv) {
     //Present option to get food or not?
     cout<<"#You didn't have breakfast and think you might need the energy, but time is running out#"<<endl;
     cout<<"PARTNER: Do you wanna grab a small meal or keep going? enter [1]meal [2]no meal"<<endl;
-    cin>>decide1;
-    if (decide1==1){
+    cin>>dec1;
+    if (dec1==1){
         energy=60;
         time=90;
         cout<<"PARTNER: Ok now we are dangerously low on time"<<endl;
@@ -56,6 +56,12 @@ int main(int argc, char** argv) {
     cout<<"Tool Package1: Knife, prybar, oxygen bottle - geared towards rescue on the boat"<<endl;
     cout<<"Tool Package2: Lifejacket, fins, flaregun - geared towards swimming rescue"<<endl;
     cin>>dec2;
+    if (dec2==1){ //tool package 1
+        tool1=1;
+    }
+    if (dec2==2){ //tool package 2
+        tool2=1;
+    }
     
     
     //Process/Calculations Here
