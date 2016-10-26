@@ -65,7 +65,6 @@ int main(int argc, char** argv) {
         tool2=1;
         cout<<"PARTNER: Great, you jump in the water and save the ones overboard, "<<endl;
         cout<<"I'll grab the ones on the boat - NOW LETS GO!!!"<<endl;
-    
     }
     
     //Get to boat via chopper
@@ -92,6 +91,35 @@ int main(int argc, char** argv) {
     
     //Get back to chopper
     //Display how many people were saved
+            
+            
+            
+   //Random number
+//            01
+//#include <cstdlib>
+//02
+//#include <ctime>
+//03
+//#include <iostream>
+//04
+ 
+//05
+//using namespace std;
+//06
+ 
+//07
+//int main() {
+//08
+//     srand(time(NULL));
+//09
+//     cout <<  rand() % 10 + 1 << endl;  //number between 1 and 10
+//10
+// 
+//11
+//     return 0;
+//12
+//}
+
     
          
             
