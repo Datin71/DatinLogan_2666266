@@ -58,12 +58,44 @@ int main(int argc, char** argv) {
     cin>>dec2;
     if (dec2==1){ //tool package 1
         tool1=1;
+        cout<<"PARTNER: Great, you get on board the ship and get the ones back from there, "<<endl;
+        cout<<"I'll grab the ones that went overboard - NOW LETS GO!!!"<<endl;
     }
     if (dec2==2){ //tool package 2
         tool2=1;
+        cout<<"PARTNER: Great, you jump in the water and save the ones overboard, "<<endl;
+        cout<<"I'll grab the ones on the boat - NOW LETS GO!!!"<<endl;
+    
     }
     
+    //Get to boat via chopper
+    cout<<"#"
     
+    //Press a key to grab a person
+    //Press a key to call the bucket up
+    //Press a key to find another person
+    
+            
+    //Have scenario = to some random number maybe 3 different scenarios
+    //1st scenario-if tool package 1
+        //There is a person stuck behind a door and there is a code, figure out the code
+    //2nd scenario-if tool package 1
+        //There is a person passed out from being hit in the head
+    //3rd scenario-if tool package 1
+        //There is a person stuck underneath a fishing net
+    //1st scenario-if tool package 2
+        //There is a person drowning - If your energy is high, you can get to them, if not, you cant make it back
+    //2nd scenario-if tool package 2
+        //There is a person extremely far away getting taken by a current
+    //3rd scenario-if tool package 2
+        //The chopper has lost sight of you
+    
+    //Get back to chopper
+    //Display how many people were saved
+    
+         
+            
+            
     //Process/Calculations Here
     cout<<time<<endl;
     cout<<energy<<endl;
