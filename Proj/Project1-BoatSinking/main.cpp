@@ -7,6 +7,8 @@
 
 //System Libraries Here
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 //User Libraries Here
@@ -15,23 +17,31 @@ using namespace std;
 //Like PI, e, Gravity, or conversions
 
 //Function Prototypes Here
-
+void genNum(); //Generate Random number
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare all Variables Here
-    int time=100,       //How much time you have before the boat sinks
+    int clock=100,       //How much time you have before the boat sinks
         health=50,      //How much health you have
         energy=50,      //energy you have
         food=0,         //food adds to health, but takes away time
         dead=20,        //People dead
         tool1=0,        //knife, prybar, oxygen bottle
         tool2=0;        //lifejacket, fins, flaregun
-    int saved;          //People saved
+    int saved=0;          //People saved
     string name;        //Name of user
     int dec1;        //Decide to get first meal
     int dec2;        //Decide which tool package to get
     int action;     //Pauses program and waits for user input
     
+    //Door code problem variables
+    int num,    //the number
+        guess,  //user guess
+        atmpt=20;  //how many tries they are allowed to have
+    
+    //initialize clock
+    srand (time(0)); 
+
     //Start Story
     cout<<"#You enter briefing room and take a seat#"<<endl;
     cout<<"#Officer walks in room#"<<endl;
@@ -48,7 +58,7 @@ int main(int argc, char** argv) {
     cin>>dec1;
     if (dec1==1){
         energy=60;
-        time=90;
+        clock=90;
         cout<<"PARTNER: Ok now we are dangerously low on time"<<endl;
     }
     
@@ -70,7 +80,7 @@ int main(int argc, char** argv) {
     }
     
     //Get to boat via chopper
-    cout<<"#You and your partner board the chopper3"<endl;
+    cout<<"#You and your partner board the chopper"<<endl;
     cout<<"#You arrive on the scene, 10 people are on the boat and 6 are in the water#"<<endl;
     cout<<"Enter [1] to descend to the scene"<<endl;
     cin>>action;
@@ -79,14 +89,82 @@ int main(int argc, char** argv) {
     cout<<"#One person immediately comes up to you#"<<endl;
     cout<<"Enter [1] to help the person into the rescue basket and raise it"<<endl;
     cin>>action;
-    saved=19;
+    saved=saved+1;
             
     //Proceed to tool package 1 path
-    if (tool1=1){
+    if (tool1==1){
         cout<<"#You look around the ship to find another person#"<<endl;
         cout<<"#Hear screaming coming from inside the control room#"<<endl;
         cout<<"#There is a lock on the door with a passcode#"<<endl;
-    } 
+        cout<<"#To gain access, you must guess the correct number 1-100#"<<endl;
+        
+        num=rand()%100+1;
+        for (int i=0;num!=guess&&i<=atmpt;i++){    
+            cin>>guess;
+            if (num==guess){
+                cout<<"#Good job! You open the door and save this person#"<<endl;
+                cout<<"#Press [1] to lift the person up the basket"<<endl;
+                cin>>action;
+                saved=saved+1;}
+            if (num>guess){
+                cout<<"Your guess is too low"<<endl;
+                //cin>>guess;
+            }
+            if (num<guess){
+                cout<<"Your guess is too high"<<endl;
+                //cin>>guess;
+            }
+            if (i==atmpt){
+                cout<<"#TOO LONG! Give up and get out! The Chopper is leaving!#"<<endl;
+                cout<<"GAME OVER"<<endl;
+            }
+            clock-=5;
+            }
+     }
+    
+    //Proceed along tool package 1 path
+    if (tool1==1&&clock>30){
+        cout<<"#You search for more people#"<<endl;
+        cout<<"#You come across someone that is knocked out#"<<endl;
+        cout<<"#This person will take significant time. Press [1] to save, [2] to leave#"<<endl;
+        cin>>action;
+        if (action==1){
+            cout<<"#Press [1] to administer oxygen and perform CPR#"<<endl;
+            cin>>action;
+            clock-=30;
+            cout<<"#Good job. There should be one more person on board#"<<endl;
+            saved=saved+1;
+        }
+        if (action==2){
+            cout<<"#We need to save the other person on board, if there is extra time, we will come back#"<<endl;
+        }
+    }
+    
+    //proceed along tool package 1 path
+    if (tool1==1&&clock>30){
+        cout<<"#You hear someone screaming and rush to them#"<<endl;
+        cout<<"#They are trapped under a large fishing net#"<<endl;
+        cout<<"#Press [1] to cut them out with your knife#"<<endl;
+        cin>>action;
+        clock-=30;
+        cout<<"#The person thanks you and you lift them up. Press [1]"<<endl;
+        cin>>action;
+        saved=saved+1;
+    }
+    
+    //go back and save the one you left behind
+    if (tool1==1&&clock>=30){
+        cout<<"#Go back to the knocked out guy we left behind#"<<endl;
+        cout<<"#Press [1] to give CPR and administer oxygen"<<endl;
+        cin>>action;
+        clock-=50;
+        saved=saved+1;
+    }
+    
+    //Go back to chopper
+    if (clock<30){
+        cout<<"#Time is up. Back to the CHOPPER!#"<<endl;
+    }
             
     //Press a key to find another person
     
@@ -141,14 +219,18 @@ int main(int argc, char** argv) {
             
             
     //Process/Calculations Here
-    cout<<time<<endl;
+    cout<<clock<<endl;
     cout<<energy<<endl;
+    cout<<"Saved: "<<saved<<endl;
     //Output Located Here
     
 
     //Exit
     return 0;
 }
+
+
+//Generate Random number
 
 
 
