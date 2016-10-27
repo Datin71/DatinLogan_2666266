@@ -22,16 +22,15 @@ void genNum(); //Generate Random number
 int main(int argc, char** argv) {
     //Declare all Variables Here
     int clock=100,       //How much time you have before the boat sinks
-        health=50,      //How much health you have
         energy=50,      //energy you have
-        food=0,         //food adds to health, but takes away time
-        dead=20,        //People dead
         tool1=0,        //knife, prybar, oxygen bottle
         tool2=0;        //lifejacket, fins, flaregun
     int saved=0;          //People saved
     string name;        //Name of user
     int dec1;        //Decide to get first meal
     int dec2;        //Decide which tool package to get
+    int dec3;           //Decide to leave someone and come back later or help them now
+    int dec4;           //Decide to swim or shoot the flare
     int action;     //Pauses program and waits for user input
     
     //Door code problem variables
@@ -46,8 +45,8 @@ int main(int argc, char** argv) {
     cout<<"#You enter briefing room and take a seat#"<<endl;
     cout<<"#Officer walks in room#"<<endl;
     cout<<"OFFICER: OK so here is the lowdown. We've got a small fishing vessel that is"<<endl;
-    cout<<" taking on water. There are 20 people on board. We need you and your partner to get as many people off"<<endl;
-    cout<<" the boat as possible before it goes down. What is your name?"<<endl;
+    cout<<" taking on water. There are 4 people on board and 3 in the water. We need you and your partner to rescue them"<<endl;
+    cout<<" before it goes down. What is your name?"<<endl;
     getline(cin,name);
     cout<<"#Your partner walks in to talk to you#"<<endl;
     cout<<"PARTNER: I'll be assisting you "<<name<<". we are running low on time so do what you need then get on the chopper"<<endl;
@@ -58,7 +57,7 @@ int main(int argc, char** argv) {
     cin>>dec1;
     if (dec1==1){
         energy=60;
-        clock=90;
+        clock=80;
         cout<<"PARTNER: Ok now we are dangerously low on time"<<endl;
     }
     
@@ -166,63 +165,79 @@ int main(int argc, char** argv) {
         cout<<"#Time is up. Back to the CHOPPER!#"<<endl;
     }
             
-    //Press a key to find another person
-    
-            
-    //Have scenario = to some random number maybe 3 different scenarios
-    //1st scenario-if tool package 1
-        //There is a person stuck behind a door and there is a code, figure out the code
-    //2nd scenario-if tool package 1
-        //There is a person passed out from being hit in the head
-    //3rd scenario-if tool package 1
-        //There is a person stuck underneath a fishing net
-    //1st scenario-if tool package 2
-        //There is a person drowning - If your energy is high, you can get to them, if not, you cant make it back
-    //2nd scenario-if tool package 2
-        //There is a person extremely far away getting taken by a current
-    //3rd scenario-if tool package 2
-        //The chopper has lost sight of you
-    
-    //Get back to chopper
-    //Display how many people were saved
-            
-            
-            
-   //Random number
-//            01
-//#include <cstdlib>
-//02
-//#include <ctime>
-//03
-//#include <iostream>
-//04
- 
-//05
-//using namespace std;
-//06
- 
-//07
-//int main() {
-//08
-//     srand(time(NULL));
-//09
-//     cout <<  rand() % 10 + 1 << endl;  //number between 1 and 10
-//10
-// 
-//11
-//     return 0;
-//12
-//}
+    //Tool package 2 pathway
+    if (tool2==1){
+        cout<<"#After the first person is saved you #"<<endl;
+        cout<<"#Immediately find someone drowning#"<<endl;
+        cout<<"Press [1] to give them your life jacket"<<endl;
+        cin>>action;
+        cout<<"#Do you want to use your energy to get them in the basket or swim to the next person?#"<<endl;
+        cout<<"#Press [1] to leave them for later, Press [2] to help them up#"<<endl;
+        cin>>dec3;
+        if (dec3==1){
+            cout<<"#You swim far away to get the next person. This uses lots of energy#"<<endl;
+            energy-=30;
+            cout<<"#The chopper loses sight of you and you need to decide.#"<<endl;
+            cout<<"#Do you want to swim all the way back[1] or shoot the flare gun [2]#"<<endl;
+            cout<<"#to have the chopper come back to you?#"<<endl;
+            cin>>dec4;
+            saved=saved+1;
+            if (dec4==1&&energy>=30){
+                cout<<"#You swim all the way back and help the two guys into the bucket#"<<endl;
+                cout<<"#You go back to the chopper and meet your partner#"<<endl;
+                saved=saved+1;
+            }
+            if (dec4==1&&energy<30){
+                cout<<"#You swim all the way back but you do not have the energy to get the first guy in the basket#"<<endl;
+                cout<<"#Unfortunately, someone died, life will go on, but you cant forget it#"<<endl;
+            }
+            if (dec4==2){
+                cout<<"#You shoot the flare gun, and luckily, the first person was able to get inside the basket#"<<endl;
+                cout<<"#Press [1] to help the other guy into the basket#"<<endl;
+                cin>>action;
+                cout<<"#You go back up to the chopper and meet your partner#"<<endl;
+                saved=saved+1;
+            }
+        }
+        if (dec3==2){
+            cout<<"#The person is fat and takes a lot of effort to get them in the basket#"<<endl;
+            energy-=30;
+            saved=saved+1;
+            if (energy<30){
+                cout<<"#You have used too much energy to get the person far away in the ocean,"<<endl;
+                cout<<"#Unfortunately, someone died, life will go on, but you cant forget it#"<<endl;
+            }
+            if (energy>=30){
+                cout<<"#Luckily you have enough energy to go get the other person#"<<endl;
+                cout<<"#Press [1] to start swimming#"<<endl;
+                cin>>action;
+                cout<<"#The chopper has lost sight of you. Press [1] to shoot flare gun#"<<endl;
+                cin>>action;
+                cout<<"#The chopper picks you up, you save the person, and you meet your partner back there#"<<endl;
+                saved=saved+1;
+                
+            }
+        }
+    }
 
-    
-         
-            
-            
-    //Process/Calculations Here
-    cout<<clock<<endl;
-    cout<<energy<<endl;
-    cout<<"Saved: "<<saved<<endl;
     //Output Located Here
+    cout<<name<<", you saved: "<<saved<<" people"<<endl;
+    if (tool2==1){
+        switch (saved){
+            case 1:cout<<"2 people died at your hands. Game over";break;
+            case 2:cout<<"1 person died at your hands. Game over";break;
+            case 3:cout<<"Everyone was saved. Good job, get ready for tomorrow";
+        }
+    }
+    if (tool1==1){
+        switch (saved){
+            case 1:cout<<"3 people died at your hands. Game over";break;
+            case 2:cout<<"2 people died at your hands. Game over";break;
+            case 3:cout<<"1 person died at your hands. Game over";break;
+            case 4:cout<<"Everyone was saved. Good job, get ready for tomorrow";
+        }
+    }
+    
     
 
     //Exit
