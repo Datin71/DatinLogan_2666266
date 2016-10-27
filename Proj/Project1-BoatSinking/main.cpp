@@ -26,9 +26,11 @@ int main(int argc, char** argv) {
         dead=20,        //People dead
         tool1=0,        //knife, prybar, oxygen bottle
         tool2=0;        //lifejacket, fins, flaregun
+    int saved;          //People saved
     string name;        //Name of user
     int dec1;        //Decide to get first meal
     int dec2;        //Decide which tool package to get
+    int action;     //Pauses program and waits for user input
     
     //Start Story
     cout<<"#You enter briefing room and take a seat#"<<endl;
@@ -68,10 +70,24 @@ int main(int argc, char** argv) {
     }
     
     //Get to boat via chopper
-    cout<<"#"
+    cout<<"#You and your partner board the chopper3"<endl;
+    cout<<"#You arrive on the scene, 10 people are on the boat and 6 are in the water#"<<endl;
+    cout<<"Enter [1] to descend to the scene"<<endl;
+    cin>>action;
     
-    //Press a key to grab a person
-    //Press a key to call the bucket up
+    //Save a person
+    cout<<"#One person immediately comes up to you#"<<endl;
+    cout<<"Enter [1] to help the person into the rescue basket and raise it"<<endl;
+    cin>>action;
+    saved=19;
+            
+    //Proceed to tool package 1 path
+    if (tool1=1){
+        cout<<"#You look around the ship to find another person#"<<endl;
+        cout<<"#Hear screaming coming from inside the control room#"<<endl;
+        cout<<"#There is a lock on the door with a passcode#"<<endl;
+    } 
+            
     //Press a key to find another person
     
             
