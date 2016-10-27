@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
         tool1=0,        //knife, prybar, oxygen bottle
         tool2=0;        //lifejacket, fins, flaregun
     int saved=0;          //People saved
+    int mode;           //What mode the user is playing in
     string name;        //Name of user
     int dec1;        //Decide to get first meal
     int dec2;        //Decide which tool package to get
@@ -41,6 +42,14 @@ int main(int argc, char** argv) {
     //initialize clock
     srand (time(0)); 
 
+    //initialize hard mode(applies to tool package 1 only)
+    cout<<"Hard mode press [1]"<<endl;
+    cout<<"Easy mode press [2]"<<endl;
+    cin>>mode;
+    if (mode==1){
+        clock=70;
+    }
+    
     //Start Story
     cout<<"#You enter briefing room and take a seat#"<<endl;
     cout<<"#Officer walks in room#"<<endl;
@@ -114,7 +123,6 @@ int main(int argc, char** argv) {
                 //cin>>guess;
             }
             if (i==atmpt){
-                cout<<"#TOO LONG! Give up and get out! The Chopper is leaving!#"<<endl;
                 cout<<"GAME OVER"<<endl;
             }
             clock-=5;
@@ -219,8 +227,8 @@ int main(int argc, char** argv) {
             }
         }
     }
-
-    //Output Located Here
+    
+    //results of the game
     cout<<name<<", you saved: "<<saved<<" people"<<endl;
     if (tool2==1){
         switch (saved){
@@ -238,8 +246,6 @@ int main(int argc, char** argv) {
         }
     }
     
-    
-
     //Exit
     return 0;
 }
