@@ -2,7 +2,7 @@
    File:   main
    Author: Logan Datin
    Created on November 5, 2016, 5:21 PM
-   Purpose:  
+   Purpose:  Calculate area of a rectangle
  */
 
 //System Libraries
@@ -17,16 +17,13 @@ using namespace std;  //Name-space used in the System Library
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
-    //Declaration of Variables
- 
-    //Input values
+    //Declare Variables
     
-       
-    //Process values -> Map inputs to Outputs
+    //Process
     
+    //Output
     
-    //Display Output
-   
     //Exit Program
     return 0;
 }
+
