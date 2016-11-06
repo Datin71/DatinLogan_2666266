@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Gaddis_8thEd_Chap6_Prob2_RectangleArea
+PROJECTNAME=CPP_Template
 
 # Active Configuration
 DEFAULTCONF=Debug
