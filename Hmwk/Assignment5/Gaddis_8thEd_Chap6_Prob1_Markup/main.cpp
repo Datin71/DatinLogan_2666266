@@ -44,10 +44,16 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   enter the division sales  *************************
+//Purpose:  Calculate retail price
+//Inputs:   wholesale value and the markup percentage
+//Output:   output the retail price
+//******************************************************************************
 void retail(float w, int m){
     //Declare Variables
     float r; //Retail price, wholesale price
-    
     
     //Process
     r=w+((w*m)/100); //Calculate retail
