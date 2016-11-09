@@ -43,6 +43,14 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Display all of the values   *************************
+//Purpose:  Enter and validate the division sales 
+//Inputs:   input the division being evaluated
+//Output:   output how much the division sales were
+//******************************************************************************
+
 void display(float l,float w,float a){
     //Display Values
     cout<<"Length: "<<l<<" units"<<endl;
