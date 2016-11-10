@@ -28,21 +28,29 @@ int main(int argc, char** argv) {
     
     //Process to get results
     cout<<"Input number of accidents in North region"<<endl;
-    numA(numN); //function to find accident # in the north
+    numN=numA(numN); //function to find accident # in the north
     cout<<"Input number of accidents in South region"<<endl;
-    numA(numS); //function to find accident # in the south
+    numS=numA(numS); //function to find accident # in the south
     cout<<"Input number of accidents in East region"<<endl;
-    numA(numE); //function to find accident # in the east
+    numE=numA(numE); //function to find accident # in the east
     cout<<"Input number of accidents in West region"<<endl;
-    numA(numW); //function to find accident # in the West
+    numW=numA(numW); //function to find accident # in the West
     cout<<"Input number of accidents in Central region"<<endl;
-    numA(numC); //function to find accident # in the Central
+    numC=numA(numC); //function to find accident # in the Central
     
     //Output
     lowest(numN,numS,numE,numW,numC);
     //Exit Program
     return 0;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   input number of accidents   *************************
+//Purpose:  input number of accidents
+//Inputs:   none
+//Output:   numX ->the number of accidents entered
+//******************************************************************************
 
 int numA(int numX){
     //User Input
@@ -56,9 +64,16 @@ int numA(int numX){
     return numX;
 }
 
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Output region with lowest accidents******************
+//Purpose:  Output region with lowest accidents
+//Inputs:   the different region accident data
+//Output:   cout the region with lowest accident rating, number of accidents
+//******************************************************************************
+
 void lowest(int n, int s, int e, int w, int c){
     //output lowest value
-    cout<<n<<s<<e<<w<<c<<endl;
     if(n<s&&n<e&&n<w&&n<c){
         cout<<"North has the lowest accident count with "<<n<<" accidents"<<endl;
     }
