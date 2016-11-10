@@ -14,10 +14,10 @@ using namespace std;  //Name-space used in the System Library
 //Global Constants
 
 //Function prototypes
-float length(float);
-float width(float);
-float area(float,float);
-void display(float,float,float);
+float length(float);                //input length 
+float width(float);                 //input width
+float area(float,float);            //calculate area
+void display(float,float,float);    //Display all info
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
 //**********************   Display all of the values   *************************
-//Purpose:  Enter and validate the division sales 
-//Inputs:   input the division being evaluated
-//Output:   output how much the division sales were
+//Purpose:  Display all of the values
+//Inputs:   length, width, area
+//Output:   output length, width, area
 //******************************************************************************
 
 void display(float l,float w,float a){
@@ -57,6 +57,14 @@ void display(float l,float w,float a){
     cout<<"Width: "<<w<<" units"<<endl;
     cout<<"Area: "<<a<<" units squared"<<endl;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   calculate area    ***********************************
+//Purpose:  Calculate area
+//Inputs:   Length, width
+//Output:   area
+//******************************************************************************
 
 float area(float l, float w){
     //Declare Variables
@@ -67,12 +75,27 @@ float area(float l, float w){
     return a;
 }
 
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Input width of rectangle    *************************
+//Purpose:  Input width of rectangle 
+//Inputs:   none
+//Output:   width
+//******************************************************************************
+
 float width(float w){
     //prompt user for width value
     cout<<"Enter the width of the rectangle"<<endl;
     cin>>w;
     return w;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Input length of rectangle   *************************
+//Purpose:  Input length of rectangle
+//Inputs:   length
+//******************************************************************************
 
 float length(float l){
     //prompt user for length value
