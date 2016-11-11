@@ -36,6 +36,14 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Determine Average absent    *************************
+//Purpose:  Determine Average absent
+//Inputs:   number of employees and total days absent
+//Output:   average days an employee is absent
+//******************************************************************************
+
 float avrg(int emp,int absentT){
     //Declare Variables
     float average; //Average employee will be absent
@@ -46,6 +54,14 @@ float avrg(int emp,int absentT){
     //output
     return average;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Days Absent Total           *************************
+//Purpose:  add the number of days each employee is absent
+//Inputs:   number of employees
+//Output:   total absent days of all workers
+//******************************************************************************
 
 int absent(int emp){
     //Declare Variables
@@ -64,6 +80,14 @@ int absent(int emp){
     }
     return absT;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//**********************   Number of Employees         *************************
+//Purpose:  Determine number of employees
+//Inputs:   none
+//Output:   number of employees
+//******************************************************************************
 
 int numEmp(){
     //Declare Variables
