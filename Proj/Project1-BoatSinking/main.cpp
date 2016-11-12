@@ -6,10 +6,10 @@
  */
 
 //System Libraries Here
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <iomanip>
+#include <iostream>     //input and ouput objects
+#include <ctime>        //for random number
+#include <cstdlib>      //library
+#include <iomanip>      //output format
 using namespace std;
 
 //User Libraries Here
@@ -24,6 +24,7 @@ void vaca(); //go on vacation
 int main(int argc, char** argv) {
     //Declare variables
     int decide; //decide to go home or save lives
+    
     //Determine if you want to go into the office today
     cout<<"#It seems that you have lots of overtime left over#"<<endl;
     cout<<"Would you like to save lives today[1] or go home on vacation[2]?"<<endl;
@@ -32,11 +33,18 @@ int main(int argc, char** argv) {
     if (decide==1){
         run();
     }else vaca();
-    
-    
+        
     //exit
     return 0;
 }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//*************************   Run the game *************************************
+//Purpose:  Run the game
+//Inputs:   none
+//Output:   none
+//******************************************************************************
 
 void run(){    
     //Declare all Variables Here
@@ -322,6 +330,14 @@ void run(){
     }while (again=='Y'||again=='y');
     //Exit
     }
+
+//000000011111111112222222222333333333344444444445555555555666666666677777777778
+//345678901234567890123456789012345678901234567890123456789012345678901234567890
+//*************************   Go home   ****************************************
+//Purpose:  Tell the diver that he has to go to work
+//Inputs:   none
+//Output:  cout the message that he has to save lives and doesn't get to go home
+//******************************************************************************
 
 void vaca(){
     cout<<"Too bad, we are short on people and need you to come in"<<endl;
