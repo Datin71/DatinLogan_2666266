@@ -157,11 +157,9 @@ void run(){
                 saved=saved+1;}
             if (num>guess){
                 cout<<"Your guess is too low"<<endl;
-                cin>>guess;
             }
             if (num<guess){
                 cout<<"Your guess is too high"<<endl;
-                cin>>guess;
             }
             if (i==atmpt){
                 cout<<"GAME OVER"<<endl;
@@ -302,7 +300,8 @@ void run(){
     cout<<"OFFICER: You are due to take a test. Please sit."<<endl;
     cout<<"Test for "<<firstN<<lastN<<idNum<<endl;
     cout<<"#Being a rescue diver requires great physical and mental capacity#"<<endl;
-    cout<<"#You will be given a series of intelligence tests#"<<endl;
+    cout<<"#You will be given a couple questions to answer right now#"<<endl;
+    cout<<"........Problem 1.........."<<endl;
     
     //Problem1
     cout<<"If there are 2000 calories burned by a single person every 3 hours on"<<endl;
@@ -310,24 +309,29 @@ void run(){
     cout<<idNum<<" divers take 1 hour to complete the rescue mission?"<<endl;
     q1Ans=(2000.0f/3.0f)*static_cast<float>(idNum);     //answer to problem
     cin>>ans1;  //user input
-    if (q1Ans>ans1-1&&q1Ans<ans1+1){    //if the answer is correct with a tolerance of 1 calorie
+    if (q1Ans>ans1-5&&q1Ans<ans1+5){    //if the answer is correct with a tolerance of 5 calories
         cout<<"That answer is correct"<<endl;
         score=1; //score now equal to 1
     }else cout<<"That answer is incorrect"<<endl;
     cout<<"True answer: "<<fixed<<setprecision(2)<<showpoint<<q1Ans<<endl;
     
-    //Problem2    
+    //Problem2  
+    cout<<"........Problem 2........."<<endl;
     cout<<"You need to heat up a frozen door lock that is submerged underwater to get someone out."<<endl;
     cout<<"Do you [T] heat with a torch or [F] heat with flare?"<<endl;
     cin>>ans2; //user input
-    while (ans2!='T'||ans2!='t'||ans2!='F'||ans2!='f'){//validate input
-        cout<<"You need to enter either [T] or [F]"<<endl;
-        cin>>ans2;
+    
+    //output
+    if (ans2=='F'||ans2=='f'){
+        score++;
     }
-    ans2 =='F'||ans2=='f'? cout<<"The answer is correct"<<endl:cout<<"The answer is incorrect"<<endl; //output if correct or not
-    cout<<"Do you want to retake the test?(Y/N)"<<endl;
+    ans2 =='F'||ans2=='f'? cout<<"The answer is correct because a flare will burn underwater"<<endl:cout<<"The answer is incorrect because a torch will not burn underwater"<<endl;
+    cout<<"Do you want to retake the test? You will have to sign back in with a new badge number.(Y/N)"<<endl;
     cin>>again;
     }while (again=='Y'||again=='y');
+    
+    //Output score
+    cout<<"You got "<<score<<" out 2 questions correct."<<endl;
     //Exit
     }
 

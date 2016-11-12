@@ -1,33 +1,35 @@
 /* 
-   File:   main
-   Author: Logan Datin
-   Created on November 6, 2016, 6:19 PM
-   Purpose:  Safest Driving Area
+ * File:   main.cpp
+ * Author: Logan Datin  
+ * Created on October 24, 2016, 8:20 AM
+ * Purpose:  You are a rescue diver trying to save as many people as possible
  */
 
-//System Libraries
-#include <iostream>   //Input/Output objects
-#include <iomanip>
-using namespace std;  //Name-space used in the System Library
+//System Libraries Here
+#include <iostream>
+using namespace std;
 
-//User Libraries
+//User Libraries Here
 
-//Global Constants
+//Global Constants Only, No Global Variables
+//Like PI, e, Gravity, or conversions
 
-//Function prototypes
+//Function Prototypes Here
 
-//Execution Begins Here!
+//Program Execution Begins Here
 int main(int argc, char** argv) {
-    //Declare Variables
+    //Declare all Variables Here
     
-    char ans2;
-    //Process to get results
-   
+    //Process
+    
     //Output
-    cout<<"You need to heat up a frozen door lock that is submerged underwater to get someone out."<<endl;
-    cout<<"Do you [T] heat with a torch or [F] heat with flare?"<<endl;
-    cin>>ans2;
-    ans2 =='F'||ans2=='f'? cout<<"The answer is correct"<<endl:cout<<"The answer is incorrect"<<endl;
-    //Exit Program
+    
+    //Exit
     return 0;
 }
+
+
+//Generate Random number
+
+
+
