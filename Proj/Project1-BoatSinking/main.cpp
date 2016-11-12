@@ -53,7 +53,7 @@ void run(){
         tool1=0,        //knife, prybar, oxygen bottle
         tool2=0;        //lifejacket, fins, flaregun
     int saved=0;          //People saved
-    int mode;           //What mode the user is playing in
+    int mode=0;           //What mode the user is playing in
     string name;        //Name of user
     int dec1;        //Decide to get first meal
     int dec2;        //Decide which tool package to get
@@ -83,7 +83,7 @@ void run(){
     cout<<"Easy mode press [2]"<<endl;
     cin>>mode;
     //validate input
-    while(mode==1||mode==2){
+    while(mode<1||mode>2){
         cout<<"You must enter [1] for hard mode or [2] for easy mode"<<endl;
         cin>>mode;
     }
@@ -131,12 +131,12 @@ void run(){
     //Get to boat via chopper
     cout<<"#You and your partner board the chopper"<<endl;
     cout<<"#You arrive on the scene, 10 people are on the boat and 6 are in the water#"<<endl;
-    cout<<"Enter [1] to descend to the scene"<<endl;
+    cout<<"Enter any key to descend to the scene"<<endl;
     cin>>action;
     
     //Save a person
     cout<<"#One person immediately comes up to you#"<<endl;
-    cout<<"Enter [1] to help the person into the rescue basket and raise it"<<endl;
+    cout<<"Enter any key to help the person into the rescue basket and raise it"<<endl;
     cin>>action;
     saved=saved+1;
             
@@ -157,11 +157,11 @@ void run(){
                 saved=saved+1;}
             if (num>guess){
                 cout<<"Your guess is too low"<<endl;
-                //cin>>guess;
+                cin>>guess;
             }
             if (num<guess){
                 cout<<"Your guess is too high"<<endl;
-                //cin>>guess;
+                cin>>guess;
             }
             if (i==atmpt){
                 cout<<"GAME OVER"<<endl;
