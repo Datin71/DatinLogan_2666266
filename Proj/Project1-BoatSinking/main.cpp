@@ -17,7 +17,7 @@ using namespace std;
 //Like PI, e, Gravity, or conversions
 
 //Function Prototypes Here
-void genNum(); //Generate Random number
+
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare all Variables Here
@@ -33,6 +33,11 @@ int main(int argc, char** argv) {
     int dec3;           //Decide to leave someone and come back later or help them now
     int dec4;           //Decide to swim or shoot the flare
     int action;     //Pauses program and waits for user input
+    char lastN;     //First letter of last name
+    char firstN;    //first letter of first name
+    int idNum;         //ID number Two digit
+    float ans1;     //First answer to test
+    float q1Ans;         //Question 1 answer
     
     //Door code problem variables
     int num,    //the number
@@ -239,12 +244,36 @@ int main(int argc, char** argv) {
     }
     if (tool1==1){
         switch (saved){
-            case 1:cout<<"3 people died at your hands. Game over";break;
-            case 2:cout<<"2 people died at your hands. Game over";break;
-            case 3:cout<<"1 person died at your hands. Game over";break;
+            case 1:cout<<"3 people died at your hands. You did all you could";break;
+            case 2:cout<<"2 people died at your hands. You did all you could";break;
+            case 3:cout<<"1 person died at your hands. You did all you could";break;
             case 4:cout<<"Everyone was saved. Good job, get ready for tomorrow";
         }
     }
+    
+    //Debrief mission
+    cout<<"#You get back to base to debrief."<<endl;
+    cout<<"#You decide to stick around the base for a bit more, maybe fill out some paperwork."<<endl;
+    cout<<"...........Enter Facility..................."<<endl;
+    cout<<"#Please enter the first letter of your last name#"<<endl;
+    cin>>lastN;
+    cout<<"#Please enter the first letter of your first name#"<<endl;
+    cin>>firstN;
+    cout<<"#Enter a single digit number for your ID#"<<endl;
+    cin>>idNum;
+    
+    //Written test
+    cout<<"OFFICER: You are due to take a test. Please sit."<<endl;
+    cout<<"Test for "<<firstN<<lastN<<idNum<<endl;
+    cout<<"#Being a rescue diver requires great physical and mental capacity#"<<endl;
+    cout<<"#You will be given a series of intelligence tests#"<<endl;
+    
+    //Problem1-
+    cout<<"If there are 2000 calories burned by a single person every 3 hours on"<<endl;
+    cout<<"a single rescue mission, what is the average calories burned if"<<endl;
+    cout<<idNum<<" divers take 1 hour to complete the rescue mission?"<<endl;
+    cin>>ans1;
+    q1Ans=(2000/3)*static_cast<float>(idNum);
     
     //Exit
     return 0;
