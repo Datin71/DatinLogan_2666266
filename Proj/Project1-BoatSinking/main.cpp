@@ -9,6 +9,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <iomanip>
 using namespace std;
 
 //User Libraries Here
@@ -17,9 +18,27 @@ using namespace std;
 //Like PI, e, Gravity, or conversions
 
 //Function Prototypes Here
-
+void run(); //run the game
+void vaca(); //go on vacation
 //Program Execution Begins Here
 int main(int argc, char** argv) {
+    //Declare variables
+    int decide; //decide to go home or save lives
+    //Determine if you want to go into the office today
+    cout<<"#It seems that you have lots of overtime left over#"<<endl;
+    cout<<"Would you like to save lives today[1] or go home on vacation[2]?"<<endl;
+    cin>>decide;
+    cout<<decide<<endl;
+    if (decide==1){
+        run();
+    }else vaca();
+    
+    
+    //exit
+    return 0;
+}
+
+void run(){    
     //Declare all Variables Here
     int clock=100,       //How much time you have before the boat sinks
         energy=50,      //energy you have
@@ -38,7 +57,11 @@ int main(int argc, char** argv) {
     int idNum;         //ID number Two digit
     float ans1;     //First answer to test
     float q1Ans;         //Question 1 answer
-    
+    int score;      //test score
+    int attmpt;     //attempts to answer each question
+    char ans2;      //Second answer to test
+    char again;     //retry test
+        
     //Door code problem variables
     int num,    //the number
         guess,  //user guess
@@ -51,6 +74,11 @@ int main(int argc, char** argv) {
     cout<<"Hard mode press [1]"<<endl;
     cout<<"Easy mode press [2]"<<endl;
     cin>>mode;
+    //validate input
+    while(mode==1||mode==2){
+        cout<<"You must enter [1] for hard mode or [2] for easy mode"<<endl;
+        cin>>mode;
+    }
     if (mode==1){
         clock=70;
     }
@@ -251,8 +279,8 @@ int main(int argc, char** argv) {
         }
     }
     
-    //Debrief mission
-    cout<<"#You get back to base to debrief."<<endl;
+    //Debrief mission and take test
+    do {cout<<"#You get back to base to debrief."<<endl;
     cout<<"#You decide to stick around the base for a bit more, maybe fill out some paperwork."<<endl;
     cout<<"...........Enter Facility..................."<<endl;
     cout<<"#Please enter the first letter of your last name#"<<endl;
@@ -268,19 +296,36 @@ int main(int argc, char** argv) {
     cout<<"#Being a rescue diver requires great physical and mental capacity#"<<endl;
     cout<<"#You will be given a series of intelligence tests#"<<endl;
     
-    //Problem1-
+    //Problem1
     cout<<"If there are 2000 calories burned by a single person every 3 hours on"<<endl;
     cout<<"a single rescue mission, what is the average calories burned if"<<endl;
     cout<<idNum<<" divers take 1 hour to complete the rescue mission?"<<endl;
-    cin>>ans1;
-    q1Ans=(2000/3)*static_cast<float>(idNum);
+    q1Ans=(2000.0f/3.0f)*static_cast<float>(idNum);     //answer to problem
+    cin>>ans1;  //user input
+    if (q1Ans>ans1-1&&q1Ans<ans1+1){    //if the answer is correct with a tolerance of 1 calorie
+        cout<<"That answer is correct"<<endl;
+        score=1; //score now equal to 1
+    }else cout<<"That answer is incorrect"<<endl;
+    cout<<"True answer: "<<fixed<<setprecision(2)<<showpoint<<q1Ans<<endl;
     
+    //Problem2    
+    cout<<"You need to heat up a frozen door lock that is submerged underwater to get someone out."<<endl;
+    cout<<"Do you [T] heat with a torch or [F] heat with flare?"<<endl;
+    cin>>ans2; //user input
+    while (ans2!='T'||ans2!='t'||ans2!='F'||ans2!='f'){//validate input
+        cout<<"You need to enter either [T] or [F]"<<endl;
+        cin>>ans2;
+    }
+    ans2 =='F'||ans2=='f'? cout<<"The answer is correct"<<endl:cout<<"The answer is incorrect"<<endl; //output if correct or not
+    cout<<"Do you want to retake the test?(Y/N)"<<endl;
+    cin>>again;
+    }while (again=='Y'||again=='y');
     //Exit
-    return 0;
+    }
+
+void vaca(){
+    cout<<"Too bad, we are short on people and need you to come in"<<endl;
+    run();
 }
-
-
-//Generate Random number
-
 
 
