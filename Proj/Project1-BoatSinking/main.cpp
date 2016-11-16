@@ -20,6 +20,7 @@ using namespace std;
 //Function Prototypes Here
 void run(); //run the game
 void vaca(); //go on vacation
+
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare variables
@@ -62,11 +63,10 @@ void run(){
     int action;     //Pauses program and waits for user input
     char lastN;     //First letter of last name
     char firstN;    //first letter of first name
-    int idNum;         //ID number Two digit
+    int idNum;         //ID number digit
     float ans1;     //First answer to test
     float q1Ans;         //Question 1 answer
     int score;      //test score
-    int attmpt;     //attempts to answer each question
     char ans2;      //Second answer to test
     char again;     //retry test
         
