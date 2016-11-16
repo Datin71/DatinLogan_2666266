@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CPPTemplate
+PROJECTNAME=Gaddis_8thEd_Chap7_Prob2_RainfallStatistics
 
 # Active Configuration
 DEFAULTCONF=Debug
