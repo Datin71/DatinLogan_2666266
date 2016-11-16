@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: Dr. Mark E. Lehr
+ * Author: Logan Datin
  * Created on November 16th, 2016, 9:37 AM
- * Purpose:  Mark Sort in 1 function
+ * Purpose:  Mark Sort - Translate all functions into 1 function
  */
 
 //System Libraries Here
@@ -18,7 +18,7 @@ using namespace std;
 
 //Function Prototypes Here
 //void fillAry(int [],int);
-void prntAry(int [],int);
+//void prntAry(int [],int);
 //void swap(int &,int &);
 //void minPos(int [],int,int);
 //void markSrt(int [],int);
@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
     //Declare all Variables Here
     int const SIZE=100;
     int array[SIZE],utilize;
+    int count=0;
         
     //Input or initialize values Here
     do{
@@ -44,7 +45,6 @@ int main(int argc, char** argv) {
         array[i]=rand()%90+10;//Random 2 digit number
     }
     //Output Located Here
-    int count=0;
     cout<<"The Array"<<endl;
     for(int i=0;i<utilize;i++){
         cout<<array[i]<<" ";
@@ -67,7 +67,13 @@ int main(int argc, char** argv) {
     }
     
     //Output Located Here
-    prntAry(array,utilize);
+    //prntAry(array,utilize);
+    cout<<"The Array"<<endl;
+    for(int i=0;i<utilize;i++){
+        cout<<array[i]<<" ";
+        if((count++)%10==9)cout<<endl;
+    }
+    cout<<endl;
 
     //Exit
     return 0;
@@ -96,16 +102,16 @@ int main(int argc, char** argv) {
 //    a=a^b;
 //}
 
-void prntAry(int a[],int n){
+//void prntAry(int a[],int n){
     //Output Located Here
-    int count=0;
-    cout<<"The Array"<<endl;
-    for(int i=0;i<n;i++){
-        cout<<a[i]<<" ";
-        if((count++)%10==9)cout<<endl;
-    }
-    cout<<endl;
-}
+//    int count=0;
+//    cout<<"The Array"<<endl;
+//    for(int i=0;i<n;i++){
+//        cout<<a[i]<<" ";
+//        if((count++)%10==9)cout<<endl;
+//    }
+//    cout<<endl;
+//}
 
 //void fillAry(int a[],int n){
     //Fill the array
