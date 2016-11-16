@@ -17,11 +17,11 @@ using namespace std;
 //Like PI, e, Gravity, or conversions
 
 //Function Prototypes Here
-void fillAry(int [],int);
+//void fillAry(int [],int);
 void prntAry(int [],int);
-void swap(int &,int &);
-void minPos(int [],int,int);
-void markSrt(int [],int);
+//void swap(int &,int &);
+//void minPos(int [],int,int);
+//void markSrt(int [],int);
 
 //Program Execution Begins Here
 int main(int argc, char** argv) {
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     //Declare all Variables Here
     int const SIZE=100;
     int array[SIZE],utilize;
-    
+        
     //Input or initialize values Here
     do{
         cout<<"How much of the array to utilize?"<<endl;
@@ -58,7 +58,11 @@ int main(int argc, char** argv) {
     for(int i=0;i<utilize-1;i++){
         //minPos(array,utilize,i);
         for(int j=i+1;j<utilize;j++){
-        if(array[i]>array[j])swap(array[i],array[j]);
+        if(array[i]>array[j]){//{swap(array[i],array[j]);
+            array[i]=array[i]^array[j];
+            array[j]=array[i]^array[j];
+            array[i]=array[i]^array[j];
+        }
     }
     }
     
@@ -81,16 +85,16 @@ int main(int argc, char** argv) {
 //    }
 //}
 
-void swap(int &a,int &b){
+//void swap(int &a,int &b){
     //Temp memory Swap
     //int temp=a;
     //a=b;
     //b=temp;
     //In place memory Swap
-    a=a^b;
-    b=a^b;
-    a=a^b;
-}
+//    a=a^b;
+//    b=a^b;
+//    a=a^b;
+//}
 
 void prntAry(int a[],int n){
     //Output Located Here
