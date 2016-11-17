@@ -20,10 +20,11 @@ using namespace std;
 //Program Execution Begins Here
 int main(int argc, char** argv) {
     //Declare all Variables Here
-    string salsa[5];    //Types of salsa
-    int sales[5];       //Sales for each type of salsa
-    int min=1000,max=-1000;        //min and max sales
+    string salsa[5];        //Types of salsa
+    int sales[5];           //Sales for each type of salsa
+    int min=1000,max=-1000; //min and max sales
     string minS, maxS;      //min and max salsa names
+    int totalS=0;             //total sales
     
     //Fill salsa array
     salsa[0]="mild";
@@ -61,7 +62,13 @@ int main(int argc, char** argv) {
         }
     }
     
+    //total sales
+    for (int j=0;j<5;j++){
+        totalS+=sales[j];
+    }
+    
     //Output the data
+    cout<<"Total Sales: "<<totalS<<" jars"<<endl;
     cout<<"Highest Selling Salsa: "<<maxS<<endl;
     cout<<"Lowest Selling Salsa: "<<minS<<endl;
     cout<<"# of Jars Sold    "<<"Salsa Type"<<endl;
