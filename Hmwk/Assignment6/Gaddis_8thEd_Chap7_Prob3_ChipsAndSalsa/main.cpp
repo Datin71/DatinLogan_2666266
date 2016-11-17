@@ -7,7 +7,7 @@
 
 //System Libraries Here
 #include <iostream>
-#include <fstream>  //read in data from file
+#include <iomanip>  //output formatting
 using namespace std;
 
 //User Libraries Here
@@ -22,12 +22,54 @@ int main(int argc, char** argv) {
     //Declare all Variables Here
     string salsa[5];    //Types of salsa
     int sales[5];       //Sales for each type of salsa
-    //Input or initialize values Here
-   
-    //Process/Calculations Here
+    int min=1000,max=-1000;        //min and max sales
+    string minS, maxS;      //min and max salsa names
     
-    //Output Located Here
+    //Fill salsa array
+    salsa[0]="mild";
+    salsa[1]="medium";
+    salsa[2]="sweet";
+    salsa[3]="hot";
+    salsa[4]="zesty";
+          
+    //fill sales array
+    for (int i=0;i<5;i++){
+    cout<<"Enter number of jars sold of "<<salsa[i]<<" salsa"<<endl;
+    cin>>sales[i];
+    while (sales[i]<0){ //input validation
+        cout<<"cannot have negative sales, enter number of jars sold of "<<salsa[i]<<" salsa"<<endl;
+        cin>>sales[i];}
+    }
     
+    //find minimum selling salsa
+    for(int k=0;k<5;k++){
+        if (sales[k]<min){
+            min=sales[k];
+            if (min=sales[k]){
+                minS=salsa[k];
+            }
+        }
+    }
+    
+    //find maximum selling salsa
+    for(int k=0;k<5;k++){
+        if (sales[k]>max){
+            max=sales[k];
+            if (max=sales[k]){
+                maxS=salsa[k];
+            }
+        }
+    }
+    
+    //Output the data
+    cout<<"Highest Selling Salsa: "<<maxS<<endl;
+    cout<<"Lowest Selling Salsa: "<<minS<<endl;
+    cout<<"# of Jars Sold    "<<"Salsa Type"<<endl;
+    for (int i=0;i<5;i++){
+        cout<<setw(8)<<sales[i];
+        cout<<setw(17)<<salsa[i]<<endl;
+       
+    }
 
     //Exit
     return 0;
