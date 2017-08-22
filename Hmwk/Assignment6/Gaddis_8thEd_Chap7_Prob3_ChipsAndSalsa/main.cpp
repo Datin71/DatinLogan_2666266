@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     salsa[1]="medium";
     salsa[2]="sweet";
     salsa[3]="hot";
-    salsa[4]="zesty";
+    salsa[4]="zesty!";
           
     //fill sales array
     for (int i=0;i<5;i++){

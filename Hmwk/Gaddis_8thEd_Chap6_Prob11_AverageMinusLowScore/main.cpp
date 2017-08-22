@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     //Output Located Here
     cout<<fixed<<setprecision(2)<<showpoint;
     cout<<"Average minus lowest score "<<avg<<endl;
-
+    cout<<"You Suck!"<<endl;
     //Exit
     return 0;
 }
