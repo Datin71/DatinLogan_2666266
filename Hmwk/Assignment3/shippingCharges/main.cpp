@@ -41,24 +41,24 @@ int main(int argc, char** argv) {
         cin>>d;
     }
     
-    //Process values
+    //Process values and display output cost
     if (w<=3)
-    {c=(d/750)*1.25;
+    {c=1.25+((int)(d-1)/750)*1.25;
         cout<<"The shipping charge is $"<<setprecision(2)<<fixed<<c<<endl;
     }
     
     if (w>3&&w<=7)
-    {c=2.35+(d/750)*2.35;
+    {c=2.35+((int)(d-1)/750)*2.35;
         cout<<"The shipping charge is $"<<setprecision(2)<<fixed<<c<<endl;
     }
     
     if (w>7&&w<=12)
-    {c=3.75+(d/750)*3.75;
+    {c=3.75+((int)(d-1)/750)*3.75;
         cout<<"The shipping charge is $"<<setprecision(2)<<fixed<<c<<endl;
     }
     
     if (w>12&&w<=25)
-    {c=(d/750)*4.90;
+    {c=4.90+((int)(d-1)/750)*4.90;
         cout<<"The shipping charge is $"<<setprecision(2)<<fixed<<c<<endl;
     }
 
